@@ -7,8 +7,8 @@
     <string name="register">REGISTER</string>
     <string name="missingInformation">Missing information</string>
     <string name="successfulReg">Successful Registration</string>
-    <string name= "successfulLog">Login Successful</string>
+    <string name="successfulLog">Login Successful</string>
     <string name="existingEmail">This email address already exists</string>
     <string name="notMatchingPassword">Password does not match</string>
-    <string name= "invalidEmailorPassword">Invalid email or password</string>
+    <string name="invalidEmailorPassword">Invalid email or password</string>
 </resources>

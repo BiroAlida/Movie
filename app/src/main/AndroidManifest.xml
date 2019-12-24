@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.movie">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,8 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.movie.AndroidDatabaseManager"></activity>
-        <activity android:name=".MoviesActivity"></activity>
+        <activity android:name=".ProbaActivity"></activity>
+        <activity android:name=".AndroidDatabaseManager" />
+        <activity android:name=".MoviesActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity">
             <intent-filter>
