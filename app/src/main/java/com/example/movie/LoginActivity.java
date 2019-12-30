@@ -46,6 +46,8 @@ public class LoginActivity extends AppCompatActivity  {
                 {
                     Toast.makeText(getApplicationContext(),getString(R.string.successfulLog), Toast.LENGTH_SHORT).show();
                     Intent goToMoviesPage = new Intent(LoginActivity.this, MoviesActivity.class);
+                    goToMoviesPage.putExtra("EmailOfUser",inputEmail);
+                    goToMoviesPage.putExtra("PasswordOfUser",inputPassword);
                     startActivity(goToMoviesPage);
                 }
                 else{

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.MatrixCursor;
 import android.util.Log;
@@ -21,7 +22,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL("Create table user(email text primary key, password text)");
+        db.execSQL("Create table user(email text primary key, password text, image blob)");
     }
 
     @Override
@@ -103,6 +104,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return alc;
         }
     }
+
+    public boolean updatePassword(String newpassword, String email, String oldPassword)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("email",email);
+        contentValues.put("password", newpassword);
+        db.update("user", contentValues, "password=? and email=?", new String[] {String.valueOf(oldPassword),String.valueOf(email)});
+        return true;
+
+    }
+
 
 
 }

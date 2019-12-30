@@ -12,10 +12,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MoviesActivity extends AppCompatActivity {
 
+    private String inputEmail, inputPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movies);
+
+        Bundle extras = getIntent().getExtras();
+        inputEmail = extras.getString("EmailOfUser");
+        inputPassword = extras.getString("PasswordOfUser");
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -35,6 +40,10 @@ public class MoviesActivity extends AppCompatActivity {
 
                     case R.id.action_profile:
                         Toast.makeText(MoviesActivity.this, "profile clicked", Toast.LENGTH_SHORT).show();
+                        Intent goToProfilePage =  new Intent (MoviesActivity.this, ProfileActivity.class);
+                        goToProfilePage.putExtra("EmailOfUser",inputEmail);
+                        goToProfilePage.putExtra("PasswordOfUser",inputPassword);
+                        startActivity(goToProfilePage);
                         break;
 
                     case R.id.action_favorites:
