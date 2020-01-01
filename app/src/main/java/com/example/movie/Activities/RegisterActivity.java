@@ -1,4 +1,4 @@
-package com.example.movie;
+package com.example.movie.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.movie.Helpers.DatabaseHelper;
+import com.example.movie.R;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 

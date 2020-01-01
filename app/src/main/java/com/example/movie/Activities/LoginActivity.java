@@ -1,4 +1,4 @@
-package com.example.movie;
+package com.example.movie.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.movie.Helpers.AndroidDatabaseManager;
+import com.example.movie.Helpers.DatabaseHelper;
+import com.example.movie.R;
 
 public class LoginActivity extends AppCompatActivity  {
 
@@ -31,7 +35,7 @@ public class LoginActivity extends AppCompatActivity  {
         tv.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                Intent dbmanager = new Intent(LoginActivity.this,AndroidDatabaseManager.class);
+                Intent dbmanager = new Intent(LoginActivity.this, AndroidDatabaseManager.class);
                 startActivity(dbmanager);
             }
         });

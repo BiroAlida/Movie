@@ -1,5 +1,5 @@
 //add your package name here example: package com.example.dbm;
-package com.example.movie;
+package com.example.movie.Helpers;
 //all required import files
 import java.util.ArrayList;
 import java.util.LinkedList;

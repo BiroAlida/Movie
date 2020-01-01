@@ -1,11 +1,9 @@
-package com.example.movie;
+package com.example.movie.Apis;
 
-import java.util.List;
+import com.example.movie.Classes.Results;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Header;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface JsonPlaceHolderApi {

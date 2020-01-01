@@ -1,4 +1,4 @@
-package com.example.movie;
+package com.example.movie.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.movie.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MoviesActivity extends AppCompatActivity {
@@ -30,7 +31,7 @@ public class MoviesActivity extends AppCompatActivity {
                 {
                     case R.id.action_home:
                         Toast.makeText(MoviesActivity.this, "Home clicked", Toast.LENGTH_SHORT).show();
-                        Intent intent =  new Intent (MoviesActivity.this, ProbaActivity.class);
+                        Intent intent =  new Intent (MoviesActivity.this, HomeActivity.class);
                         startActivity(intent);
                         break;
 

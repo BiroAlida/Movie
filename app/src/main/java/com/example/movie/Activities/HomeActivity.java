@@ -1,4 +1,4 @@
-package com.example.movie;
+package com.example.movie.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,10 +9,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.SearchView;
-import android.widget.TextView;
+
+import com.example.movie.Classes.Movie;
+import com.example.movie.Classes.Results;
+import com.example.movie.Adapters.HomePageAdapter;
+import com.example.movie.Apis.JsonPlaceHolderApi;
+import com.example.movie.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -20,7 +24,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ProbaActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
+public class HomeActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     private RecyclerView rw;
     private ArrayList<Movie> list = new ArrayList<>();
@@ -33,7 +37,7 @@ public class ProbaActivity extends AppCompatActivity implements SearchView.OnQue
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_proba);
+        setContentView(R.layout.activity_home);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.themoviedb.org/")
@@ -81,7 +85,7 @@ public class ProbaActivity extends AppCompatActivity implements SearchView.OnQue
 
             rw = findViewById(R.id.recview);
             rw.setLayoutManager(new LinearLayoutManager(this));
-            adapter = new HomePageAdapter(ProbaActivity.this, list);
+            adapter = new HomePageAdapter(HomeActivity.this, list);
             rw.setAdapter(adapter);
 
             call.enqueue(new Callback<Results>() {

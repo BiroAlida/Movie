@@ -1,5 +1,6 @@
-package com.example.movie;
+package com.example.movie.Classes;
 
+import com.example.movie.Classes.Movie;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

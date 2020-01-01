@@ -1,4 +1,4 @@
-package com.example.movie;
+package com.example.movie.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.movie.Classes.Movie;
+import com.example.movie.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
